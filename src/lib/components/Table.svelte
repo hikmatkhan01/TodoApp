@@ -1,10 +1,8 @@
 <script>
-  let { todos } = $props();
+  let { filteredTodos } = $props();
 </script>
 
-<!-- {#each todos as todo}
-  <li>{todo.name}</li>
-{/each} -->
+
 
 <table class="min-w-full table-auto border-collapse">
   <thead class="bg-gray-200">
@@ -24,7 +22,7 @@
     </tr>
   </thead>
   <tbody>
-    {#each todos as todo}
+    {#each filteredTodos as todo}
       <tr class="border-b">
         <td class="px-4 py-2 text-base text-black">{todo.id}</td>
         <td
@@ -40,7 +38,7 @@
             class="text-red-500 hover:text-red-700"
             onclick={() => handelDelete(todo.id)}
           > -->
-            <button class="text-red-500 hover:text-red-700"   onclick={() => todos = todos.filter(t => t.id !== todo.id)}>
+            <button class="text-red-500 hover:text-red-700"   onclick={() => filteredTodos = filteredTodos.filter(t => t.id !== todo.id)}>
 
             <svg
               xmlns="http://www.w3.org/2000/svg"
